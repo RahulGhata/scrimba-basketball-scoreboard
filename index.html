@@ -1,59 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" type="image/x-icon" href="/Assets/favicon.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="android-chrome-512x512.png" />
     <title>Basketball Scoreboard</title>
-
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-    <div class="container">
-        <h1 class="text"></h1>
-        <div class="scoreboard">
-
-            <div class="team-container">
-                <h2 class="text">HOME</h2>
-
-                <div class="one">
-                    <p class="pts" id="home-pts">0</p>
-                    <p class="pts-shadow">000</p>
-                </div>
-
-                <div class="two">
-                    <button id="one-pt" onclick="homeAddPoint()">+1</button>
-                    <button id="two-pts" onclick="homeAddTwoPoints()">+2</button>
-                    <button id="three-pts" onclick="homeAddThreePoints()">+3</button>
-                </div>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="board">
+        <h1>basketball scoreboard</h1>
+        <div id="scoreboard">
+            <div id="home">
+            <h2 class="headline">HOME</h2>
+            <div class="score">
+                <p id="home-pts">0</p>
+                <p class="pts-shadow">000</p>
             </div>
-
-            <div class="team-container">
-                <h2 class="text">GUEST</h2>
-
-                <div class="one">
-                    <p class="pts" id="guest-pts">0</p>
-                    <p class="pts-shadow">000</p>
-                </div>
-
-                <div class="two">
-                    <button id="one-pt" onclick="guestAddPoint()">+1</button>
-                    <button id="two-pts" onclick="guestAddTwoPoints()">+2</button>
-                    <button id="three-pts" onclick="guestAddThreePoints()">+3</button>
-                </div>
+            <div class="button" id="play">
+                <button class="num" onclick="homeplusone()">+1</button>
+                <button class="num" onclick="homeplustwo()">+2</button>
+                <button class="num" onclick="homeplusthree()">+3</button>
             </div>
-
+            </div>
+            <div id="guest">
+            <h2 class="headline">GUEST</h2>
+            <div class="score">
+                <p id="guest-pts">0</p>
+                <p class="pts-shadow">000</p>
+            </div>
+            <div class="button" id="play">
+                <button class="num" onclick="guestplusone()">+1</button>
+                <button class="num" onclick="guestplustwo()">+2</button>
+                <button class="num" onclick="guestplusthree()">+3</button>
+            </div>
+            </div>
         </div>
+        <p id="message">...</p>
+        <button id="reset" onclick="reset()">RESET</button>
+      </div>
     </div>
 
     <footer>
-        <p class="footer">Made by <a href="https://github.com/RahulGhata">Rahul Ghata</a></p>
-        <p class="footer">Website made as part of the JavaScript Course provided by <a href="https://scrimba.com/">Scrimba</a></p>
-    </footer>
+      <p class="footer">Made by <a href="https://github.com/RahulGhata">Rahul Ghata</a></p>
+      <p class="footer">Website made as part of the JavaScript Course provided by <a href="https://scrimba.com/">Scrimba</a></p>
+  </footer>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>

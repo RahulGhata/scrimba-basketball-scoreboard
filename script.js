@@ -1,35 +1,63 @@
-let homePts=document.getElementById('home-pts')
-let homeCount=0
-let guestPts=document.getElementById('guest-pts')
-let guestCount=0
+let homeCount = 0;
+let guestCount = 0;
 
-function homeAddPoint() {
-    homeCount=homeCount+1
-    homePts.innerText=homeCount    
+let homePts = document.querySelector("#home-pts");
+let guestPts = document.querySelector("#guest-pts");
+
+function homeplusone() {
+    homeCount = homeCount + 1;
+    homePts.textContent = homeCount;
+    updateMessage();
 }
 
-function homeAddTwoPoints() {
-    homeCount=homeCount+2
-    homePts.innerText=homeCount
+function homeplustwo() {
+    homeCount = homeCount + 2;
+    homePts.textContent = homeCount;
+    updateMessage();
 }
 
-function homeAddThreePoints() {
-    homeCount=homeCount+3
-    homePts.innerText=homeCount
+function homeplusthree() {
+    homeCount = homeCount + 3;
+    homePts.textContent = homeCount;
+    updateMessage();
 }
 
-
-function guestAddPoint() {
-    guestCount=guestCount+1
-    guestPts.innerText=guestCount    
+function guestplusone() {
+    guestCount = guestCount + 1;
+    guestPts.textContent = guestCount;
+    updateMessage();
 }
 
-function guestAddTwoPoints() {
-    guestCount=guestCount+2
-    guestPts.innerText=guestCount
+function guestplustwo() {
+    guestCount += 2;
+    guestPts.textContent = guestCount;
+    updateMessage();
 }
 
-function guestAddThreePoints() {
-    guestCount=guestCount+3
-    guestPts.innerText=guestCount
+function guestplusthree() {
+    guestCount += 3;
+    guestPts.textContent = guestCount;
+    updateMessage();
+}
+
+let messageEl = document.querySelector("#message");
+
+function updateMessage() {
+    if (homeCount > guestCount) {
+        messageEl.textContent = "Home is leading";
+    } else if (guestCount > homeCount) {
+        messageEl.textContent = "Guest is leading";
+    } else if (homeCount === 0 && guestCount === 0) {
+        messageEl.textContent = "..."; // Default message
+    } else {
+        messageEl.textContent = "Scores are tied";
+    }
+}
+
+function reset() {
+    homeCount = 0;
+    homePts.textContent = homeCount;
+    guestCount = 0;
+    guestPts.textContent = guestCount;
+    updateMessage();
 }
